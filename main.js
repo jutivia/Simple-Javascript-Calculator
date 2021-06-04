@@ -22,19 +22,9 @@ output.value = "";
 };
 
 const squareRoot = () =>{
-if(isNaN(output.value) == false){
-
-let result = Math.sqrt(output.value);
-result = result.toString()
-if(result.length >= 15){
-let decimalResult = Number(result);
-let newResult = decimalResult.toFixed(10);
-input.value=newResult;
-output.value = "";
-}else {
-input.value = result;
-}
-}else if(isNaN(output.value) == true &&input.value !==false){
+  console.log(input.value)
+if(isNaN(output.value) === true && isNaN(input.value) == false){
+  
   let result= Math.sqrt(input.value)
 result = result.toString()
 if(result.length >= 15){
@@ -44,6 +34,18 @@ input.value=newResult;
 output.value = "";
 } 
 else {
+input.value = result;
+}
+}else if(isNaN(output.value) == false){
+
+let result = Math.sqrt(output.value);
+result = result.toString()
+if(result.length >= 15){
+let decimalResult = Number(result);
+let newResult = decimalResult.toFixed(10);
+input.value=newResult;
+output.value = "";
+}else {
 input.value = result;
 }
 }
