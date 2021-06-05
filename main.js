@@ -2,6 +2,7 @@ var input = document.getElementsByTagName("input")[0];
 var output=  document.getElementsByTagName("input")[1]
 var button = document.getElementsByTagName("button");
 
+
 //BUTTON FUNCTIONS
 const reset = () => {
 input.value = '';
@@ -10,35 +11,32 @@ output.value=''
 
 
 const powerOfTwo = () => {
-if(isNaN(output.value)==false){
-  input.value= output.value
-let result = Math.pow(input.value, 2);
-input.value=result
-output.value = "";
-} else{
-  input.value=''
-output.value = "";
-}
-};
+let result= eval(input.value);
+if(isNaN(result)==false){
 
-const squareRoot = () =>{
-  console.log(input.value)
-if(isNaN(output.value) === true && isNaN(input.value) == false){
-  
-  let result= Math.sqrt(input.value)
+result = Math.pow(result, 2);
 result = result.toString()
 if(result.length >= 15){
 let decimalResult = Number(result);
 let newResult = decimalResult.toFixed(10);
 input.value=newResult;
 output.value = "";
-} 
-else {
+} else {
 input.value = result;
+output.value = "";
 }
-}else if(isNaN(output.value) == false){
+}else{
+  input.value=''
+output.value = "";
+}
+};
 
-let result = Math.sqrt(output.value);
+const squareRoot = () =>{
+
+let result= eval(input.value);
+console.log(result)
+if(isNaN(result) == false){
+result = Math.sqrt(result);
 result = result.toString()
 if(result.length >= 15){
 let decimalResult = Number(result);
@@ -47,6 +45,7 @@ input.value=newResult;
 output.value = "";
 }else {
 input.value = result;
+output.value = "";
 }
 }
  else{
@@ -63,33 +62,66 @@ const multiplication = () => {
 
 const nine = () => {
   input.value += "9"; 
-  output.value= eval(input.value)
+  let result= eval(input.value)
+  if(result.length >= 15){
+    return output.value =result.toFixed(10)
+    }else {
+    return output.value= result
+    }
 }
 
 const eight = () =>{
   input.value += "8"; 
- output.value= eval(input.value)
+  let result= eval(input.value)
+  if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
-const seven = () => { input.value += "7"; 
-output.value= eval(input.value)
+const seven = () => {
+  input.value += "7"; 
+  let result= eval(input.value)
+ if(result.length >= 15){
+   return output.value =result.toFixed(15)
+    }else {
+      return output.value= result
+    }
 }
 
-const division = () =>{ input.value += '/'; 
+const division = () =>{ 
+ input.value += '/'; 
+ output.value = "";
 }
 
 const six = () => { 
   input.value += "6";
-  output.value= eval(input.value)
+  let result= eval(input.value)
+   if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
 const five = () => {
    input.value += "5"; 
-   output.value= eval(input.value)
+   let result= eval(input.value)
+    if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 const four = () =>{
    input.value += "4"; 
-   output.value= eval(input.value)
+   let result= eval(input.value)
+   if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 const subtraction = () =>{ 
   input.value += '-'; 
@@ -99,19 +131,32 @@ const subtraction = () =>{
 
 const three = () =>{ 
   input.value += "3"; 
-  output.value= eval(input.value)
+  let result= eval(input.value)
+   if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
 const two = () => {
   input.value += "2"; 
-  output.value= eval(input.value)
+  let result= eval(input.value)
+  if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
 const one = () =>{
    input.value += "1";
-    output.value= eval(input.value)
-
-   
+   let result= eval(input.value)
+    if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
 const addition = () =>{
@@ -125,6 +170,12 @@ const period = () =>{
 
 const zero = () =>{ 
   input.value += "0"; 
+  let result= eval(input.value)
+   if(result.length >= 15){
+   return output.value =result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 }
 
 const powerOfn = () => {
@@ -137,7 +188,12 @@ const powerOfn = () => {
 const del = () =>{
   let a = input.value;
  input.value = a.substring(0, a.length - 1);
- output.value= eval(input.value)
+  let result= eval(a)
+   if(result.length >= 15){
+   return output.value = result.toFixed(10)
+    }else {
+      return output.value= result
+    }
 };
 
 const equalTo = () => {

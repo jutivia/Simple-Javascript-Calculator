@@ -49,7 +49,8 @@ body {
   border:none;
   color:rgb(59, 59, 59);
   text-align: right;
-   background-color:transparent;
+  background-color:transparent;
+  overflow-x:scroll;
 }
 #history:focus, #output:focus{
   outline:none;
